@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block nome %} Home {% endblock %}
+
+{% block conteudo %}
+
+<div id="carouselExampleControls" class="carousel slide" style="padding-top: 90px;" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="{% static 'img/carrosel/3.png' %}" alt="Primeiro Slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="{% static 'img/carrosel/2.png' %}" alt="Segundo Slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src=" {% static 'img/carrosel/1.png' %}" alt="Terceiro Slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src=" {% static 'img/carrosel/4.png' %}" alt="Terceiro Slide">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Próximo</span>
+    </a>
+</div>
+<div class="centraliza_imagem" style="padding-top: 50px;">
+    <img src="{% static 'img/bemvindo.png' %}" width="600px" alt="">
+</div>
+<div style="margin: 100px;">
+    <figure class="text-center titulo" class="frase">
+        <br>
+        <blockquote class="blockquote">
+            <p>A estrada para o sucesso está sempre em construção.</p>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+            Autor desconhecido
+        </figcaption>
+    </figure>
+    <p style="text-align: justify;">Tenha certeza que, quando precisar, a loja de material de
+        construção Dois Irmãos estará disponível para te auxiliar com os melhores produtos disponíveis no mercado. A
+        nossa
+        loja é pioneira quando o assunto trata-se de confiabilidade nos nossos serviços, o que a torna a escolha
+        certeira
+        para o bom andamento da sua obra. Entre em contato agora mesmo e faremos um orçamento personalizado para as suas
+        necessidades.</p>
+</div>
+
+{% endblock %}

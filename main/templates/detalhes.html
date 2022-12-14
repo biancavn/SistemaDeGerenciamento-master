@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block titulo%} Detalhes {{ peça.nome }} {% endblock %}
+
+{% block conteudo %}
+
+<section class="col" style="padding-top: 150px; padding-bottom: 80px;">
+    <div class="card margem">
+        <div class="row g-0 row d-flex justify-content-center">
+            <div class="col-md-4">
+                <a href="#"><img src="/media/{{ peça.imagem }}" width="60%" alt="imagem do peça"></a>
+            </div>
+            <div class="col-md-6">
+                <h3 class="card-title titulo justificado">{{ peça.nome }}</h3>
+                <p class="card-text" style="font-size: 15px; color: gray;">Descrição do produto:</p>
+                <p class="card-text justificado">{{ peça.descricao_produto }}</p>
+                <p class="card-text vlr" style="color: red;"> <b>R${{ peça.valor }} </b></p>
+                <a class="btn btn-primary" href="{% url 'produtos' %}" style="background-color: #fb1900;"
+                    role="button">Voltar</a>
+                    <a class="btn btn-primary" href="{% url 'produtos' %}" style="background-color: #fb1900;" 
+                    role="button">Adicionar ao carrinho</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
