@@ -79,5 +79,9 @@ def addproduto(request):
 
     return render(request, 'venda.html', { 'form' : form})
 
+@login_required
+def estoque(request):
+    return render(request, "estoque.html")
+
 
 

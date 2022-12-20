@@ -33,6 +33,7 @@ urlpatterns = [
     path('cadastrovendedor/',cadastro_vendedor,name='cadastrovendedor'),
     path('login/',LoginView.as_view(template_name='login.html'),name='login'),
     path('logout/',logout_aplicacao,name='logout'),
+    path('estoque/',estoque,name='estoque'),
 #tem que colocar virgula depois da última url
 ]
 
