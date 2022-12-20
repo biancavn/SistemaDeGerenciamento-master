@@ -81,7 +81,9 @@ def addproduto(request):
 
 @login_required
 def estoque(request):
-    return render(request, "estoque.html")
+    lista = Produto.objects.all().order_by('nome')  # ordenando em ordem alfabetica
+    # retorna a página de produtos e a lista de objetos tipo Produto
+    return render(request, "estoque.html", {'peca':lista})
 
 
 
