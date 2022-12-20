@@ -22,18 +22,19 @@
                 <th scope="col">R$ {{ p.valor }} </th>
                 <th scope="col"> {{p.quantidade_produto}}</th>
                 <th scope="col"> <a href="{% url 'editar_produto'  p.id %}" class="btn btn-primary">Editar</a> </th>
-            </tr> 
+                <th><a class="btn btn-primary cor" href="{% url 'remover_produto' p.id %}"
+                        style="background-color: red;" role="button">Apagar produto
+                    </a></th>
+            </tr>
         </tbody>
 
         {% endfor %}
     </table>
     </div>
-    <a class="btn btn-primary cor" href="{% url 'addproduto' %}" style="background-color: red;"
-        role="button">Criar produto
+    <a class="btn btn-primary cor" href="{% url 'addproduto' %}" style="background-color: red;" role="button">Criar
+        produto
     </a>
-    <a class="btn btn-primary cor" href="{% url 'addproduto' %}" style="background-color: red;"
-        role="button">Apagar produto
-    </a>
+
 </section>
 
 

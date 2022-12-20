@@ -93,14 +93,15 @@ def update_produto(request, pk):
     form = AddProdutoForm(request.POST or None, instance=produto)
     if form.is_valid():
         form.save()
+        # Não aparece a mensagem abaixo
         sweetify.sweetalert(request,'Produto alterado com Sucesso!')
         return redirect('estoque')
     
     return render(request, "addproduto.html", {'form':form})
 
 #@login_required
-#def remover_produto(request, pk):
- #   produto= get_object_or_404(produto, pk=pk)
-  #  produto.delete()
-   # return redirect('estoque')
+def remover_produto(request, pk):
+    produto= get_object_or_404(Produto, pk=pk)
+    produto.delete()
+    return redirect('estoque')
 
