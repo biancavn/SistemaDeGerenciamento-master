@@ -10,8 +10,8 @@ def index(request):
 
 def produtos(request):
     lista = Produto.objects.all().order_by('nome')  # ordenando em ordem alfabetica
-    contexto = {'peca+%36': lista}
-    return render(request, "produtos.html", contexto)
+    # retorna a página de produtos e a lista de objetos tipo Produto
+    return render(request, "produtos.html", {'peca':lista})
 
 
 def quemsomosnos(request):
