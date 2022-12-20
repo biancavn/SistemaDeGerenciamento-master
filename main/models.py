@@ -42,6 +42,7 @@ class Produto(models.Model):
     marca = models.CharField(max_length=150)
     valor = models.DecimalField('Preço do produto', max_digits=8, decimal_places=2) #alteração no tipo de models
     descricao_produto = models.TextField()
+    quantidade_produto = models.IntegerField()
     imagem = models.ImageField(upload_to='main')
     
     def __str__(self):
