@@ -85,5 +85,20 @@ def estoque(request):
     # retorna a página de produtos e a lista de objetos tipo Produto
     return render(request, "estoque.html", {'peca':lista})
 
+@login_required
+def update_produto(request, pk):
+    produto= get_object_or_404(Produto, pk=pk)
+    form = AddProdutoForm(request.POST or None, instance=produto)
+    if form.is_valid():
+        form.save()
+        sweetify.sweetalert(request,'Produto alterado com Sucesso!')
+        return redirect('estoque')
+    
+    return render(request, "addproduto.html", {'form':form})
 
+#@login_required
+#def remover_produto(request, pk):
+ #   produto= get_object_or_404(produto, pk=pk)
+  #  produto.delete()
+   # return redirect('estoque')
 
