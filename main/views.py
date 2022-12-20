@@ -10,7 +10,7 @@ def index(request):
 
 def produtos(request):
     lista = Produto.objects.all().order_by('nome')  # ordenando em ordem alfabetica
-    contexto = {'peças': lista}
+    contexto = {'peca+%36': lista}
     return render(request, "produtos.html", contexto)
 
 

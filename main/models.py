@@ -43,7 +43,7 @@ class Produto(models.Model):
     valor = models.DecimalField('Preço do produto', max_digits=8, decimal_places=2) #alteração no tipo de models
     descricao_produto = models.TextField()
     imagem = models.ImageField(upload_to='main')
-
+    twste = models.TextField()
     def __str__(self):
         return f'{self.nome}' ' - ' f' Valor: R$ {self.valor}'
 

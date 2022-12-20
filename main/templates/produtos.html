@@ -6,17 +6,17 @@
 
 <section class="container" style="padding-top: 150px;">
     <div class="row">
-    {% for peça in peças %}
+    {% for p in peca %}
         <div class="col-sm">
             <div class="local">
-                <a href=" url 'detalhes' peça.id %}"> </a>
+                <a href=" url 'detalhes' p.id %}"> </a>
                 <div style="display: flex; justify-content: center">
-                    <img src="/media/{{ peça.imagem }}" width="50%" alt="imagem da peça">
+                    <img src="/media/{{ p.imagem }}" width="50%" alt="imagem da peça">
                 </div>
                 <div class="text-down">
-                    <h5 class="nome">{{ peça.nome }}</h5>
-                    <p class="peças" style="color: red;"> <b>R${{ peça.valor }} </b></p>
-                    <a class="btn btn-primary cor" href="{% url 'detalhes' peça.id %}" style="background-color: red;"
+                    <h5 class="nome">{{ p.nome }}</h5>
+                    <p class="peças" style="color: red;"> <b>R${{ p.valor }} </b></p>
+                    <a class="btn btn-primary cor" href="{% url 'detalhes' p.id %}" style="background-color: red;"
                         role="button">Detalhes
                     </a>
                 </div>
