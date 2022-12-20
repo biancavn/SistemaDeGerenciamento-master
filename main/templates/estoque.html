@@ -5,27 +5,32 @@
 {% block conteudo %}
 
 <section class="container" style="padding-top: 150px;">
-    <div class="row">
-    {% for p in peca %}
-        <div class="col-sm">
-            <div class="local">
-                <a href=" url 'detalhes' p.id %}"> </a>
-                <div style="display: flex; justify-content: center">
-                    <img src="/media/{{ p.imagem }}" width="50%" alt="imagem da peça">
-                </div>
-                <div class="text-down">
-                    <h5 class="nome">{{ p.nome }}</h5>
-                    <p class="peças" style="color: red;"> <b>R${{ p.valor }} </b></p>
-                    <a class="btn btn-primary cor" href="{% url 'detalhes' p.id %}" style="background-color: red;"
-                        role="button">Detalhes
-                    </a>
-                </div>
-            </div>
-        </div>
-    {% endfor %}    
-    </div>
-</section>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col"> Nome </th>
+                <th scope="col"> Valor </th>
+                <th scope="col"> Quantidade</th>
+            </tr>
+        </thead>
 
+        {% for p in peca %}
+
+        <tbody>
+            <tr>
+                <th scope="col">{{ p.nome }}</th>
+                <th scope="col">R$ {{ p.valor }} </th>
+                <th scope="col"> {{p.quantidade_produto}}</th>
+            </tr>
+        </tbody>
+
+        {% endfor %}
+    </table>
+    </div>
+    <a class="btn btn-primary cor" href="{% url 'addproduto' %}" style="background-color: red;"
+        role="button">Criar produto
+    </a>
+</section>
 
 
 {% endblock %}
