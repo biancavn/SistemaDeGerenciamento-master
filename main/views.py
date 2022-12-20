@@ -1,5 +1,7 @@
 from django.shortcuts import render,redirect
 from main.models import Produto
+from django.shortcuts import redirect,get_object_or_404
+import sweetify
 from main.forms import ClienteForm,ClienteNewsletterForm,VendaForm,VendedorForm,AddProdutoForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
@@ -67,7 +69,7 @@ def venda(request):
 
     return render(request, 'venda.html', { 'form' : form})
 
-@login_required
+#@login_required
 def addproduto(request):
     if request.method == 'POST':
         form = AddProdutoForm(request.POST)
@@ -79,15 +81,15 @@ def addproduto(request):
 
     return render(request, 'venda.html', { 'form' : form})
 
-@login_required
+#@login_required
 def estoque(request):
     lista = Produto.objects.all().order_by('nome')  # ordenando em ordem alfabetica
     # retorna a página de produtos e a lista de objetos tipo Produto
     return render(request, "estoque.html", {'peca':lista})
 
-@login_required
+#@login_required
 def update_produto(request, pk):
-    produto= get_object_or_404(Produto, pk=pk)
+    produto = get_object_or_404(Produto, pk=pk)
     form = AddProdutoForm(request.POST or None, instance=produto)
     if form.is_valid():
         form.save()
