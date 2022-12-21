@@ -50,7 +50,7 @@ class Produto(models.Model):
 
 class Venda(models.Model):
     data = models.DateTimeField()
-    quantidade_produto = models.FloatField()
+    quantidade_venda = models.FloatField()
     valor_total = models.FloatField()
     Cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     Vendedor = models.ManyToManyField(Vendedor)

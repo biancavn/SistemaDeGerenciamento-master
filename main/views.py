@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from main.models import Produto
+from main.models import Produto, Venda
 from django.shortcuts import redirect,get_object_or_404
 import sweetify
 from main.forms import ClienteForm,ClienteNewsletterForm,VendaForm,VendedorForm,AddProdutoForm
@@ -68,7 +68,7 @@ def venda(request):
 
     return render(request, 'venda.html', { 'form' : form})
 
-#@login_required
+@login_required
 def addproduto(request):
     if request.method == 'POST':
         form = AddProdutoForm(request.POST)
@@ -80,13 +80,19 @@ def addproduto(request):
 
     return render(request, 'venda.html', { 'form' : form})
 
-#@login_required
+@login_required
 def estoque(request):
     lista = Produto.objects.all().order_by('nome')  # ordenando em ordem alfabetica
     # retorna a página de produtos e a lista de objetos tipo Produto
     return render(request, "estoque.html", {'peca':lista})
 
-#@login_required
+@login_required
+def registro_vendas(request):
+    lista = Venda.objects.all()  
+    # retorna a página de produtos e a lista de objetos tipo Venda
+    return render(request, "registroVendas.html", {'lista_registroVendas':lista})
+
+@login_required
 def update_produto(request, pk):
     produto = get_object_or_404(Produto, pk=pk)
     form = AddProdutoForm(request.POST or None, instance=produto)
@@ -98,7 +104,7 @@ def update_produto(request, pk):
     
     return render(request, "addproduto.html", {'form':form})
 
-#@login_required
+@login_required
 def remover_produto(request, pk):
     produto= get_object_or_404(Produto, pk=pk)
     produto.delete()

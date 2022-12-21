@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo%} Produtos {% endblock %}
+
+{% block conteudo %}
+
+<section class="container" style="padding-top: 150px;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col"> Nome </th>
+                <th scope="col"> Valor </th>
+                <th scope="col"> Quantidade</th>
+                <th scope="col"> Nome cliente</th>
+                <th scope="col"> Nome Vendedor</th>
+            </tr>
+        </thead>
+
+        {% for p in lista_registroVendas %}
+
+        <tbody>
+            <tr>
+                <th scope="col">{{ p.data }}</th>
+                <th scope="col">R$ {{ p.quantidade_venda }} </th>
+                <th scope="col"> {{p.valor_total}}</th>
+                <th scope="col">{{ p.Cliente.nome }}</th>
+                <th scope="col">{{ p.Vendedor.nome }}</th>
+                <th scope="col">{{ p.Produto.nome }}</th>
+                <th scope="col"> <a href="{% url 'editar_produto'  p.id %}" class="btn btn-primary">Editar</a> </th>
+                <th><a class="btn btn-primary cor" href="{% url 'remover_produto' p.id %}"
+                        style="background-color: red;" role="button">Apagar produto
+                    </a></th>
+            </tr>
+        </tbody>
+
+        {% endfor %}
+    </table>
+    </div>
+    <a class="btn btn-primary cor" href="{% url 'addproduto' %}" style="background-color: red;" role="button">Criar
+        produto
+    </a>
+
+</section>
+
+
+{% endblock %}
