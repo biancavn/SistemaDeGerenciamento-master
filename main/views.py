@@ -103,4 +103,3 @@ def remover_produto(request, pk):
     produto= get_object_or_404(Produto, pk=pk)
     produto.delete()
     return redirect('estoque')
-
