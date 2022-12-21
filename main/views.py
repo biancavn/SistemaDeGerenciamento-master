@@ -23,9 +23,8 @@ def quemsomosnos(request):
 def detalhes(request, id):  # recuperei o id que foi usado para deixar a url dinamica
     print("ID passado: " + str(id))
     # funciona semelhante a um select - to pegando as informações do produto a partir id
-    peças = Produto.objects.get(id=id)
-    contexto = {'peça': peças}
-    return render(request, "detalhes.html", contexto)
+    lista = Produto.objects.get(id=id)
+    return render(request, "detalhes.html", {'peca':lista})
 
 def logout_aplicacao(request):
     logout(request)

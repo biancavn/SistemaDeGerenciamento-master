@@ -16,6 +16,7 @@
                 <div class="text-down">
                     <h5 class="nome">{{ p.nome }}</h5>
                     <p class="peças" style="color: red;"> <b>R${{ p.valor }} </b></p>
+                    <p class="peças" style="color: red;"> <b>Quantidade produto: {{ p.quantidade_produto }} </b></p>
                     <a class="btn btn-primary cor" href="{% url 'detalhes' p.id %}" style="background-color: red;"
                         role="button">Detalhes
                     </a>
