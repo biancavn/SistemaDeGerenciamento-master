@@ -22,7 +22,7 @@ from django.contrib.auth.views import LoginView
 from main.views import logout_aplicacao
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name="admin"),
     path('', index,name="index"),
     path('produtos/',produtos,name="produtos"),
     path('quemsomosnos/',quemsomosnos,name="quemsomosnos"),

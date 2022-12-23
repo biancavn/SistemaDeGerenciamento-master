@@ -1,97 +1,100 @@
- .flex {
-     display: flex;
-     flex-wrap: wrap;
-     width: 100%;
-     margin: 0 auto;
- }
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+}
 
- .titulo {
-     text-align: center;
-     margin-top: 20px;
-     margin-bottom: 20px;
-     font-family: 'Suez One', serif;
- }
+.titulo {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Suez One', serif;
+}
 
- .section {
-     margin: auto;
-     justify-content: auto;
- }
+.section {
+    margin: auto;
+    justify-content: auto;
+}
 
- .margem {
-     padding: 20px;
-     margin-top: 20px;
-     margin-bottom: 20px;
-     margin-left: 200px;
-     margin-right: 200px;
-     padding-right: 0px;
- }
+.margem {
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding-right: 0px;
+}
 
- .descricao {
-     font-size: 15px;
-     color: gray;
- }
+.descricao {
+    font-size: 15px;
+    color: gray;
+}
 
- .justificado {
-     text-align: justify;
- }
+.justificado {
+    text-align: justify;
+}
 
- .pesquisar {
-     padding-left: 300px;
- }
+.pesquisar {
+    padding-left: 300px;
+}
 
- .quemsomosnos {
-     margin-left: 150px;
-     margin-right: 150px;
-     text-align: justify;
- }
+.quemsomosnos {
+    margin-left: 150px;
+    margin-right: 150px;
+    text-align: justify;
+}
 
- .centro {
-     display: block;
-     margin-left: auto;
-     margin-right: auto;
- }
+.centro {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
- .nomes {
-     margin-bottom: 15px;
-     margin-top: 15px;
- }
+.nomes {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
 
- .margemProdutos {
-     margin-top: 20px;
-     margin-left: 150px;
-     margin-right: 150px;
-     margin-bottom: 20px;
-     padding-right: 0px;
-     padding-left: 0px;
- }
+.margemProdutos {
+    margin-top: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 20px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
 
- .quemsomosnos {
-     margin-left: 150px;
-     margin-right: 150px;
- }
+.quemsomosnos {
+    margin-left: 150px;
+    margin-right: 150px;
+}
 
- .carrinho {
-     margin-left: 15px;
-     margin-right: 15px;
- }
+.carrinho {
+    margin-left: 15px;
+    margin-right: 15px;
+}
 
- .imagem {
-     margin: auto;
- }
+.imagem {
+    margin: auto;
+}
 
- .texto {
-     font-family: 'Poppins', sans-serif;
- }
+.texto {
+    font-family: 'Poppins', sans-serif;
+}
 
- .centraliza_imagem {
-     display: flex;
-     justify-content: center;
- }
+.centraliza_imagem {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    height: auto;
+}
 
- .cor {
+.cor {
     color: black;
- }
- .local{
+}
+
+.local {
     width: 300px;
     margin-bottom: 20px;
 
@@ -101,7 +104,7 @@
     padding-top: 15px;
 }
 
-.peças{
+.peças {
     font-size: 20px;
     display: flex;
     justify-content: center;
@@ -109,10 +112,237 @@
     color: #ffffff;
 }
 
-.locals{
+.locals {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
+/* responsividade navbar */
 
+/* esconde o menu de navegação em telas menores */
+nav ul {
+    display: none;
+}
+
+/* exibe o botão de menu */
+nav .menu-button {
+    display: block;
+}
+
+/* exibe o menu de navegação quando o botão de menu é clicado */
+nav .menu-button:checked+ul {
+    display: block;
+}
+
+/* responsividade footer */
+@media (max-width: 600px) {
+    footer {
+        flex-direction: column;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+
+/* centralizar frase de efeito do index */
+.elemento {
+    display: block;
+    margin: auto;
+    width: 50%;
+    /* define a largura do elemento */
+    margin-bottom: 75px;
+}
+
+/* torna as img responsivas */
+.bemvindo {
+    max-width: 100%;
+    height: auto;
+}
+
+.espaco {
+    padding-top: 38px;
+    padding-bottom: 13px;
+}
+
+.borda {
+    border: 1px solid;
+    color: white;
+    padding-left: 0;
+    padding-right: 0;
+}
+.flex {
+     display: flex;
+     flex-wrap: wrap;
+     width: 100%;
+     margin: 0 auto;
+ }
+ 
+ .titulo {
+     text-align: center;
+     margin-top: 20px;
+     margin-bottom: 20px;
+     font-family: 'Suez One', serif;
+ }
+ 
+ .section {
+     margin: auto;
+     justify-content: auto;
+ }
+ 
+ .margem {
+     padding: 20px;
+     margin-top: 20px;
+     margin-bottom: 20px;
+     margin-left: 200px;
+     margin-right: 200px;
+     padding-right: 0px;
+ }
+ 
+ .descricao {
+     font-size: 15px;
+     color: gray;
+ }
+ 
+ .justificado {
+     text-align: justify;
+ }
+ 
+ .pesquisar {
+     padding-left: 300px;
+ }
+ 
+ .quemsomosnos {
+     margin-left: 150px;
+     margin-right: 150px;
+     text-align: justify;
+ }
+ 
+ .centro {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+ }
+ 
+ .nomes {
+     margin-bottom: 15px;
+     margin-top: 15px;
+ }
+ 
+ .margemProdutos {
+     margin-top: 20px;
+     margin-left: 150px;
+     margin-right: 150px;
+     margin-bottom: 20px;
+     padding-right: 0px;
+     padding-left: 0px;
+ }
+ 
+ .quemsomosnos {
+     margin-left: 150px;
+     margin-right: 150px;
+ }
+ 
+ .carrinho {
+     margin-left: 15px;
+     margin-right: 15px;
+ }
+ 
+ .imagem {
+     margin: auto;
+ }
+ 
+ .texto {
+     font-family: 'Poppins', sans-serif;
+ }
+ 
+ .centraliza_imagem {
+     display: flex;
+     justify-content: center;
+     max-width: 100%;
+     height: auto;
+ }
+ 
+ .cor {
+     color: black;
+ }
+ 
+ .local {
+     width: 300px;
+     margin-bottom: 20px;
+ 
+     align-content: flex-start;
+     border-radius: 20px;
+     padding: 10px;
+     padding-top: 15px;
+ }
+ 
+ .peças {
+     font-size: 20px;
+     display: flex;
+     justify-content: center;
+     margin-top: 5px;
+     color: #ffffff;
+ }
+ 
+ .locals {
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+ }
+ 
+ /* responsividade navbar */
+ 
+ /* esconde o menu de navegação em telas menores */
+ nav ul {
+     display: none;
+ }
+ 
+ /* exibe o botão de menu */
+ nav .menu-button {
+     display: block;
+ }
+ 
+ /* exibe o menu de navegação quando o botão de menu é clicado */
+ nav .menu-button:checked+ul {
+     display: block;
+ }
+ 
+ /* responsividade footer */
+ @media (max-width: 600px) {
+     footer {
+         flex-direction: column;
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         width: 100%;
+     }
+ }
+ 
+ /* centralizar frase de efeito do index */
+ .elemento {
+     display: block;
+     margin: auto;
+     width: 50%;
+     /* define a largura do elemento */
+     margin-bottom: 75px;
+ }
+ 
+ /* torna as img responsivas */
+ .bemvindo {
+     max-width: 100%;
+     height: auto;
+ }
+ 
+ .espaco {
+     padding-top: 38px;
+     padding-bottom: 13px;
+ }
+ 
+ .borda {
+     border: 1px solid;
+     color: white;
+     padding-left: 0;
+     padding-right: 0;
+ }
