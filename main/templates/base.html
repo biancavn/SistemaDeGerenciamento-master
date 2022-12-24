@@ -59,6 +59,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{% url 'quemsomosnos' %}">Quem somos nós</a>
                         <li class="nav-item">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{% url 'listaClientes' %}">Clientes</a>
+                            </li>
                             {% else %}
                         <li class="nav-item">
                             <a class="nav-link active text-white" aria-current="page" href="{% url 'index' %}">Home</a>
@@ -66,10 +69,13 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{% url 'cadastro' %}">Cadastro</a>
                         </li>
+                
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{% url 'quemsomosnos' %}">Sobre nós</a>
                         </li>
+                        
                         {% endif %}
+                        
                     </ul>
                     <form class="d-flex ml-auto py-2" style="padding-right: 10px;">
                         <input class="form-control me-2" type="search" style="margin-right: 10px;" placeholder="Search"

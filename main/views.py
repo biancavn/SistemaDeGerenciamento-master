@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from main.models import Produto, Venda
+from main.models import Produto, Venda, Cliente
 from django.shortcuts import redirect,get_object_or_404
 import sweetify
 from main.forms import ClienteForm,ClienteNewsletterForm,VendaForm,VendedorForm,AddProdutoForm
@@ -38,11 +38,36 @@ def cadastro_cliente(request):
         form = ClienteForm(request.POST)
         if form.is_valid():
             form.save()
+            sweetify.sweetalert(request,'Cliente cadastrado com sucesso!')
             form = ClienteForm()
     else:
         form = ClienteForm()
 
     return render(request, 'cadastro.html', { 'form' : form})
+
+@login_required
+def listaClientes(request):
+    clientList = Cliente.objects.all() 
+    # retorna a página de clientes e a lista de clientes
+    return render(request, "lista_clientes.html", {'lista_de_clientes':clientList})
+
+@login_required
+def remover_cliente(request, pk):
+    cliente = get_object_or_404(Cliente, pk=pk)
+    cliente.delete()
+    return redirect('listaClientes')
+
+@login_required
+def update_cliente(request, pk):
+    cliente = get_object_or_404(Cliente, pk=pk)
+    form = ClienteForm(request.POST or None, instance=cliente)
+    if form.is_valid():
+        form.save()
+        # Não aparece a mensagem abaixo
+        sweetify.sweetalert(request,'Cliente alterado com sucesso!')
+        return redirect('listaClientes')
+    
+    return render(request, "cadastro.html", {'form':form})
 
 @login_required
 def cadastro_vendedor(request):

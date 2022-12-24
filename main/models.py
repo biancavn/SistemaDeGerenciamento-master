@@ -19,7 +19,7 @@ class Cliente(models.Model):
     data_nascimento = models.DateField()
     sexo = models.CharField(max_length=150, choices=LISTA_SEXO)
     email = models.EmailField()
-    endereço = models.CharField(max_length=150)
+    endereco = models.CharField(max_length=150)
     telefone = models.CharField(max_length=11)
 
     def __str__(self):

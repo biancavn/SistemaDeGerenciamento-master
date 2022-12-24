@@ -37,6 +37,9 @@ urlpatterns = [
     path('editar/<int:pk>/', update_produto, name='editar_produto'),
     path('remover/<int:pk>/', remover_produto, name='remover_produto'),
     path('registro_vendas', registro_vendas, name='registro_vendas'),
+    path('Clientes', listaClientes, name = 'listaClientes'),
+    path('remover_cliente/<int:pk>', remover_cliente, name = 'remover_cliente'),
+    path ('update_cliente/<int:pk>', update_cliente, name = 'update_cliente'),
 #tem que colocar virgula depois da última url
 ]
 
