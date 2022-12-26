@@ -1,5 +1,5 @@
 from django import forms
-from main.models import Cliente,ClienteNewsletter,Venda,Vendedor,Produto
+from main.models import Cliente,Vendedor,Produto
 
 class ClienteForm(forms.ModelForm):
     class Meta:
@@ -21,26 +21,7 @@ class VendedorForm(forms.ModelForm):
             'sexo': forms.RadioSelect(),
         }
 
-class VendaForm(forms.ModelForm):
-    class Meta:
-        model = Venda
-        fields = '__all__'
-
-        widgets = {
-            'data': forms.TimeInput(attrs={'type':'date'}),
-            'produto': forms.CheckboxSelectMultiple(),
-        }
-
 class AddProdutoForm(forms.ModelForm):
     class Meta:
         model = Produto
-        fields = '__all__'
-
-        widgets = {
-            
-        }
-
-class ClienteNewsletterForm(forms.ModelForm):
-    class Meta:
-        model = ClienteNewsletter
         fields = '__all__'

@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
- 
 {% block conteudo %}
+ 
+<style>
+    footer {
+        position: fixed;
+    }
+</style>
  
 <!DOCTYPE html>
 <html lang="pt">
@@ -28,10 +33,10 @@
 </head>
  
 <body>
-    <div id="login">
+    <div id="login" class="container">
         <h3 class="text-center text-white pt-5">Login Aplicação</h3>
-        <br>
-        <div class="container"> <!-- "borda shadow p-3 mb-5 bg-body rounded style="width: 1000px;" CUIDADO C ESSE WIDHT-->
+        <div class="container">
+            <!-- "borda shadow p-3 mb-5 bg-body rounded style="width: 1000px;" CUIDADO C ESSE WIDHT-->
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div class="col-md-5"><img src="{% static 'img/tijolo.jpg' %}" class="rounded" style="width: 400px;"
                         alt=""></div>
@@ -39,7 +44,7 @@
                     <div id="login-box" class="col-md-12">
                         <form id="login-form" class="form espaco" action="" method="post">
                             {% csrf_token %}
-                            <h3 class="text-start" style="color: black">Bem-vindo de volta!</h3>
+                            <h3 class="text-start" style="color: black; font-weight: bolder;">Bem-vindo de volta!</h3>
                             <br>
                             <div class="form-group">
                                 <label for="username" style="color: black;"></label>
@@ -53,14 +58,14 @@
                             </div>
                             <div class="form-group">
                                 <input type="submit" name="submit" class="btn btn-md shadow p-3 mb-5 bg-body rounded"
-                                    style="background-color: #fb1900; color: white; width: 320px; height: 50px;" value="Logar">
+                                    style="background-color: #fb1900; color: white; width: 310px; height: 50px;"
+                                    value="Logar">
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-        <br>
     </div>
 </body>
  

@@ -1,17 +1,32 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block titulo%} Produtos {% endblock %}
-
+{% block titulo%} Clientes {% endblock %}
 {% block conteudo %}
 
+<style>
+    footer {
+        position: fixed;
+    }
+</style>
 
-<section class="container" style="padding-top: 150px;">
-    <table class="table">
+<section class="container" style="padding-top: 120px;">
+    <div class="centraliza_imagem" style="margin-bottom: 35px;">
+        <img src="{% static 'img/clientes.png' %}"
+            alt="Imagem com bordas de tijolo e com o nome 'clientes' centralizado"
+            style="margin-bottom: -20px; width: 1110px;">
+    </div>
+    <p style="text-align: justify; margin-bottom: 35px;">Aqui você encontrará os dados dos clientes que já realizaram
+        alguma compra na empresa</p>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th scope="col"> Nome </th>
                 <th scope="col"> CPF </th>
                 <th scope="col"> Nascimento </th>
+                <!-- <th scope="col">E-mail</th>
+                <th scope="col">Endereço</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">CPF</th> -->
             </tr>
         </thead>
 
@@ -23,12 +38,14 @@
                 <th scope="col">{{ cliente.CPF }} </th>
                 <th scope="col">{{ cliente.data_nascimento }}</th>
                 <!-- <p class="peças" style="color: red;"> <b>{{ cliente.email }} </b></p>
-                    <p class="peças" style="color: red;"> <b>{{ cliente.endereco }} </b></p>
-                    <p class="peças" style="color: red;"> <b>{{ cliente.telefone }} </b></p>
-                    <p class="peças" style="color: red;"> <b>{{ cliente.CPF }} </b></p> -->
-                <th scope="col"> <a href="{% url 'update_cliente' cliente.id %}" class="btn btn-primary">Editar</a> </th>
+                <p class="peças" style="color: red;"> <b>{{ cliente.endereco }} </b></p>
+                <p class="peças" style="color: red;"> <b>{{ cliente.telefone }} </b></p>
+                <p class="peças" style="color: red;"> <b>{{ cliente.CPF }} </b></p> --> 
+                <th scope="col"> <a href="{% url 'update_cliente' cliente.id %}" class="btn btn-secondary">Editar</a>
+                </th>
                 <th><a class="btn btn-primary cor" href="{% url 'remover_cliente' cliente.id %}"
-                        style="background-color: red;" role="button">Remover cliente
+                        style="background-color: #fb1900; color: white; border-style: none;" role="button">Remover
+                        cliente
                     </a></th>
             </tr>
         </tbody>
@@ -36,7 +53,9 @@
         {% endfor %}
     </table>
     </div>
-    <a class="btn btn-primary cor" href="{% url 'cadastro' %}" style="background-color: red;" role="button">Adicionar cliente
+    <a class="btn btn-primary cor shadow" href="{% url 'cadastro' %}"
+        style="background-color: #fb1900; color: white; border-style: none;" role="button">Adicionar
+        cliente
     </a>
 
 </section>

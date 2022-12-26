@@ -1,50 +1,27 @@
 {% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
 {% load crispy_forms_tags %}
-<html lang="pt-br">
-
 {% block conteudo %}
 
-<head>
-  <meta charset="UTF-8">
-  <title>Cadastro</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-<body>
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="addproduto.html">
-        <img src="#" width="100" height="100" alt="">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Cadastro da Venda</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <div class="container">
-    <form method="post">
-      {% csrf_token %}
-      {{ form | crispy }}
-      <div>
-        <button type="submit">Cadastrar</button>
-      </div>
-    </form>
+<div class="container">
+  <div class="centraliza_imagem" style="margin-bottom: 35px; margin-top: 120px;">
+    <img src="{% static 'img/novoproduto.png' %}" alt="Imagem com bordas de tijolo e com o nome 'vendas' centralizado"
+      style="margin-bottom: -15px; width: 1110px;">
   </div>
-
-</body>
-
-</html>
+  <p style="text-align: justify; margin-bottom: 35px;">Ao cadastrar a mercadoria no estoque da empresa, além de informar
+    ao usuário quais
+    materiais estão disponíveis,
+    você o deixa informado sobre características espécífcas do produto, como descrição, produto, quantidade, bem
+    como imagem. Tornando, assim, a pesquisa e a venda mais práticas.
+  </p>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form | crispy }}
+    <div>
+      <button type="submit" class="btn btn-md shadow p-3 mb-5 bg-body rounded"
+        style="background-color: #fb1900; color: white; width: 135px; height: 50px;">Cadastrar</button>
+    </div>
+  </form>
+</div>
 
 {% endblock %}

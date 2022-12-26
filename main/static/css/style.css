@@ -346,3 +346,22 @@ nav .menu-button:checked+ul {
      padding-left: 0;
      padding-right: 0;
  }
+
+ /* novo !!!!!!!!!!! */
+ 
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%
+}
+ 
+img {
+    max-width: 100%;
+    width: 100%;
+}
+ 
+.centraliza_imagem {
+    display: flex;
+    justify-content: center;
+}
+

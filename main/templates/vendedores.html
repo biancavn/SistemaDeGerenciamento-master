@@ -1,0 +1,48 @@
+'{% extends 'base.html' %}
+{% load static %}
+{% block titulo%} Produtos {% endblock %}
+
+{% block conteudo %}
+
+<section class="container" style="padding-top: 150px;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col"> Nome </th>
+                <th scope="col"> CPF </th>
+                <th scope="col"> Sexo </th>
+                <th scope="col"> Email </th>
+                <th scope="col"> Endereço </th>
+                <th scope="col"> Telefone </th>
+            </tr>
+        </thead>
+
+        {% for vendedor in lista_de_vendedores %}
+
+        <tbody>
+            <tr>
+                <th scope="col">{{ vendedor.nome }}</th>
+                <th scope="col">{{ vendedor.CPF }} </th>
+                <th scope="col">{{ vendedor.sexo }}</th>
+                <th scope="col">{{ vendedor.email }}</th>
+                <th scope="col">{{ vendedor.endereço }} </th>
+                <th scope="col">{{ vendedor.telefone }}</th>
+                <th><a class="btn btn-primary cor" href="{% url 'update_vendedor' vendedor.id %}"
+                        style="background-color: red;" role="button">Editar vendedor
+                    </a></th>
+                <th><a class="btn btn-primary cor" href="{% url 'remover_vendedor' vendedor.id %}"
+                        style="background-color: red;" role="button">Remover vendedor
+                    </a></th>
+            </tr>
+        </tbody>
+
+        {% endfor %}
+    </table>
+    </div>
+    <a href="http://127.0.0.1:8000/admin/main/vendedor/add/" class="btn btn-primary cor" style="background-color: red;"
+        role="button">Adicionar vendedor
+    </a>
+
+</section>
+
+{% endblock %}

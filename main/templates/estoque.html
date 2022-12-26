@@ -1,16 +1,32 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block titulo%} Produtos {% endblock %}
-
+{% block titulo %} Estoque {% endblock %}
 {% block conteudo %}
 
+<style>
+    footer {
+        position: fixed;
+    }
+</style>
+
 <section class="container" style="padding-top: 150px;">
-    <table class="table">
+    <div class="centraliza_imagem">
+        <img src="{% static 'img/estoque.png' %}" alt="Imagem com bordas de tijolo e com o nome 'produtos' centralizado"
+            style="margin-bottom: 10px; width: 1110px;">
+    </div>
+    <p style="text-align: justify; margin-bottom: 35px;">O controle de estoque é uma atividade essencial para garantir o
+        suprimento adequado
+        de produtos e materiais para
+        as operações da empresa Dois Irmãos, otimizar o uso dos recursos e evitar problemas com falta ou excesso de
+        estoque.</p>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th scope="col"> Nome </th>
                 <th scope="col"> Valor </th>
                 <th scope="col"> Quantidade</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
             </tr>
         </thead>
 
@@ -21,9 +37,10 @@
                 <th scope="col">{{ p.nome }}</th>
                 <th scope="col">R$ {{ p.valor }} </th>
                 <th scope="col"> {{p.quantidade_produto}}</th>
-                <th scope="col"> <a href="{% url 'editar_produto'  p.id %}" class="btn btn-primary">Editar</a> </th>
-                <th><a class="btn btn-primary cor" href="{% url 'remover_produto' p.id %}"
-                        style="background-color: red;" role="button">Apagar produto
+                <th scope="col"> <a href="{% url 'editar_produto'  p.id %}" class="btn btn-secondary">Editar</a> </th>
+                <th><a class="btn btn-secondary" href="{% url 'remover_produto' p.id %}"
+                        style="background-color: #fb1900; color: white; border-style: none;" role="button">Apagar
+                        produto
                     </a></th>
             </tr>
         </tbody>
@@ -31,7 +48,8 @@
         {% endfor %}
     </table>
     </div>
-    <a class="btn btn-primary cor" href="{% url 'addproduto' %}" style="background-color: red;" role="button">Criar
+    <a class="btn btn-primary cor shadow" href="{% url 'addproduto' %}"
+        style="background-color: red; border-style: none; color: white; margin-bottom: 100px;" role="button">Adicionar
         produto
     </a>
 

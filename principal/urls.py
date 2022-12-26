@@ -28,7 +28,6 @@ urlpatterns = [
     path('quemsomosnos/',quemsomosnos,name="quemsomosnos"),
     path('detalhes/<int:id>',detalhes,name="detalhes"),
     path('cadastro/',cadastro_cliente,name='cadastro'),
-    path('venda/',venda,name='venda'),
     path('addproduto/',addproduto,name='addproduto'),
     path('cadastrovendedor/',cadastro_vendedor,name='cadastrovendedor'),
     path('login/',LoginView.as_view(template_name='login.html'),name='login'),
@@ -36,10 +35,15 @@ urlpatterns = [
     path('estoque/',estoque,name='estoque'),
     path('editar/<int:pk>/', update_produto, name='editar_produto'),
     path('remover/<int:pk>/', remover_produto, name='remover_produto'),
-    path('registro_vendas', registro_vendas, name='registro_vendas'),
     path('Clientes', listaClientes, name = 'listaClientes'),
     path('remover_cliente/<int:pk>', remover_cliente, name = 'remover_cliente'),
     path ('update_cliente/<int:pk>', update_cliente, name = 'update_cliente'),
+    path('remover_vendedor/<int:pk>', remover_vendedor, name = 'remover_vendedor'),
+    path ('update_vendedor/<int:pk>', update_vendedor, name = 'update_vendedor'),
+    path ('Vendedores', listaVendedores, name = 'listaVendedores'),
+    path('admin_cadastro_vendedor', cadastroVendedores, name="admin_cadastro_vendedor"),
+
+
 #tem que colocar virgula depois da última url
 ]
 

@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
-
+ 
 {% block titulo %} Quem somos nós {% endblock %}
-
+ 
 {% block conteudo %}
-
+ 
 <section>
-    <h1 class="display-4 text-white mark titulo" style="padding-top: 100px; background-color: #fb1900;">Quem somos nós?
+    <h1 class="display-4 text-white mark titulo" style="padding-top: 80px; background-color: #fb1900;">Quem somos nós?
     </h1>
     <div class="centraliza_imagem ">
-        <img src="{% static 'img/quemsomosnos.png' %}" width="1000px" style="margin-bottom: 20px;" class="rounded"
+        <img src="{% static 'img/quemsomosnos.png' %}" style="margin-bottom: 20px; width:1000px;" class="rounded"
             alt="">
     </div>
     <div class="quemsomosnos texto">
@@ -19,39 +19,42 @@
             o seu
             lar cada vez mais confortável para a sua vivência. Temos, no nosso estoque, mercadorias que vão desde o
             bruto da
-            construção, até aos detalhes dos acabamentos. Dois Irmãos, sua loja de material de construção em Rafael
-            Fernandes
+            construção, até aos detalhes mais minusciosos dos acabamentos. Dois Irmãos, sua loja de material de
+            construção em Rafael Fernandes
             - RN.</p>
     </div>
-    <h1 class="display-4 text-white mark titulo" style="background-color: #fb1900;">Nosso time:</h1>
-    <div class="container">
-        <div class="row">
-            <div class="col-xl col-md-6">
-                <img class="rounded-circle img-fluid centro" src="{% static 'img/nos/Bianca_Viana.jpeg' %}" width="70%"
-                    alt="Imagem de uma das componenetes do trabalho: Bianca Viana Costa">
-                <h2 class="h6 text-center nomes texto"><b>Bianca Viana Costa </b></h2>
-                <h2 class="h6 text-center nomes texto">Estudante do 4º ano de informática pelo IFRN </h2>
-            </div>
-            <div class="col-xl col-md-6">
-                <img class="rounded-circle img-fluid centro" src="{% static 'img/nos/lorena_carvalho.jpeg' %}"
-                    width="69%" alt="Imagem de uma das componenetes do trabalho: Lorena Carvalho Pinheiro de Aquino">
-                <h2 class="h6 text-center nomes texto"> <b>Lorena Aquino </b></h2>
-                <h2 class="h6 text-center nomes2 texto">Estudante do 4º ano de informática pelo IFRN </h2>
-            </div>
-            <div class="col-xl col-md-6">
-                <img class="rounded-circle img-fluid centro" src="{% static 'img/nos/Ana.png' %}" width="70%"
-                    alt="Imagem de uma das componenetes do trabalho: Ana Caroline de Paiva Almeida">
-                <h2 class="h6 text-center nomes texto"><b> Ana Caroline Paiva </b></h2>
-                <h2 class="h6 text-center nomes texto">Estudante do 4º ano de informática pelo IFRN </h2>
-            </div>
-            <div class="col-xl col-md-6">
-                <img class="rounded-circle img-fluid centro" src="{% static 'img/nos/Micael.png' %}" width="70%"
-                    alt="Imagem de uma das componenetes do trabalho: Micael Matias Carvalho">
-                <h2 class="h6 text-center nomes texto"><b>Micael Matias de Carvalho </b></h2>
-                <h2 class="h6 text-center nomes texto">Estudante do 4º ano de informática pelo IFRN </h2>
+    <h1 class="display-4 text-white mark titulo" style="background-color: #fb1900;">Nosso time</h1>
+    <div class="card" style="width: 1100px; margin-left: 110px; margin-bottom: 20px;">
+        <div class="card-body container">
+            <div style="display: flex; flex-direction: row; justify-content: center;">
+                <div class="col-xl col-md-6">
+                    <img class="rounded-circle img-fluid centro" src="{% static 'img/nos/Bianca_Viana.jpeg' %}"
+                        width="70%" alt="Imagem de uma das componenetes do trabalho: Bianca Viana Costa">
+                    <h2 class="h6 text-center nomes texto"><b>Bianca Viana</b></h2>
+                    <h2 class="h6 text-center nomes texto">Estudante do 4º ano de informática pelo IFRN </h2>
+                </div>
+                <div class="col-xl col-md-6">
+                    <img class="rounded-circle img-fluid centro" src="{% static 'img/nos/lorena_carvalho.jpeg' %}"
+                        width="69%"
+                        alt="Imagem de uma das componenetes do trabalho: Lorena Carvalho Pinheiro de Aquino">
+                    <h2 class="h6 text-center nomes texto"> <b>Lorena Aquino</b></h2>
+                    <h2 class="h6 text-center nomes2 texto">Estudante do 4º ano de informática pelo IFRN </h2>
+                </div>
+                <div class="col-xl col-md-6">
+                    <img class="rounded-circle img-fluid centro" src="{% static 'img/nos/Ana.png' %}" width="70%"
+                        alt="Imagem de uma das componenetes do trabalho: Ana Caroline de Paiva Almeida">
+                    <h2 class="h6 text-center nomes texto"><b>Caroline Paiva</b></h2>
+                    <h2 class="h6 text-center nomes texto">Estudante do 4º ano de informática pelo IFRN </h2>
+                </div>
+                <div class="col-xl col-md-6">
+                    <img class="rounded-circle img-fluid centro" src="{% static 'img/nos/Micael.png' %}" width="70%"
+                        alt="Imagem de uma das componenetes do trabalho: Micael Matias Carvalho">
+                    <h2 class="h6 text-center nomes texto"><b>Micael Matias</b></h2>
+                    <h2 class="h6 text-center nomes texto">Estudante do 4º ano de informática pelo IFRN </h2>
+                </div>
             </div>
         </div>
     </div>
 </section>
-
+ 
 {% endblock %}

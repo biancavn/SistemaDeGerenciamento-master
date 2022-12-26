@@ -7,12 +7,6 @@ LISTA_SEXO= [
     ('Feminino', 'Feminino')
 ]
 
-class ClienteNewsletter(models.Model):
-    email = models.EmailField()
-
-    def __str__(self):
-        return self.email
-
 class Cliente(models.Model):
     nome = models.CharField(max_length=150)
     CPF = models.CharField(max_length=11)
@@ -43,19 +37,9 @@ class Produto(models.Model):
     valor = models.DecimalField('Preço do produto', max_digits=8, decimal_places=2) #alteração no tipo de models
     descricao_produto = models.TextField()
     quantidade_produto = models.IntegerField()
-    imagem = models.ImageField(upload_to='main')
+    imagem = models.ImageField(upload_to='main/', max_length=300)
     
     def __str__(self):
         return f'{self.nome}' ' - ' f' Valor: R$ {self.valor}'
 
-class Venda(models.Model):
-    data = models.DateTimeField()
-    quantidade_venda = models.FloatField()
-    valor_total = models.FloatField()
-    Cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
-    Vendedor = models.ManyToManyField(Vendedor)
-    Produto = models.ManyToManyField(Produto)
-
-    def __str__(self):
-        return f'Horário: {self.data}' ' - ' f'Cliente: {self.Cliente}'
 
