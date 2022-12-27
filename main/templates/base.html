@@ -71,34 +71,39 @@
                     </ul>
                     <!--dropdown novos -->
                     {% if user.is_authenticated %}
-                    <div class="btn-group" style="padding-left: 625px;">
-                        <a href="#" class="itemtext-danger" alt="Venda" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-shopping-cart text-white" style="font-size: 30px; margin-left: 19px;"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                            <li><a class="dropdown-item" href="{% url 'addproduto' %}">Novo produto</a></li>
-                            <li><a class="dropdown-item" href="{% url 'cadastro' %}">Novo cliente</a></li>
-                            <li><a class="dropdown-item" href="{% url 'cadastrovendedor' %}">Novo vendedor</a></li>
-                        </ul>
-                    </div>
-                    {% endif %}
-                    <!--dropdown user-->
-                    <div class="btn-group">
-                        <a href="#" class="itemtext-danger" alt="Login" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user-alt text-white" style="font-size: 30px; margin-left: 19px;"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                            {% if user.is_superuser %}
-                            <li><a class="dropdown-item" href="{% url 'admin:index' %}">Área do administrador</a></li>
-                            {% endif %}
-                            {% if user.is_authenticated %}
-                            <li style="padding-left: 650px;">
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="{% url 'logout' %}">Sair</a></li>
-                            {% else %}
-                            <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
-                            {% endif %}
+                    <div class="ml-auto">
+                        <div class="btn-group">
+                            <a href="#" class="itemtext-danger" alt="Venda" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fas fa-shopping-cart text-white text"
+                                    style="font-size: 30px; margin-left: 19px;"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                                <li><a class="dropdown-item" href="{% url 'addproduto' %}">Novo produto</a></li>
+                                <li><a class="dropdown-item" href="{% url 'cadastro' %}">Novo cliente</a></li>
+                                <li><a class="dropdown-item" href="{% url 'cadastrovendedor' %}">Novo vendedor</a></li>
+                            </ul>
+                        </div>
+                        {% endif %}
+                        <!--dropdown user-->
+                        <div class="btn-group ml-auto">
+                            <a href="#" class="itemtext-danger" alt="Login" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fas fa-user-alt text-white" style="font-size: 30px; margin-left: 19px;"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                                {% if user.is_superuser %}
+                                <li><a class="dropdown-item" href="{% url 'admin:index' %}">Área do administrador</a>
+                                </li>
+                                {% endif %}
+                                {% if user.is_authenticated %}
+                                <li style="padding-left: 650px;">
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="{% url 'logout' %}">Sair</a></li>
+                                {% else %}
+                                <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
+                        {% endif %}
                         </ul>
                     </div>
                 </div>

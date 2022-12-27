@@ -1,8 +1,13 @@
 {% extends 'base.html' %}
 {% load static%}
 {% block titulo%} Detalhes {{ peça.nome }} {% endblock %}
-
 {% block conteudo %}
+ 
+<style>
+    footer {
+        position: fixed;
+    }
+</style>
 
 <section class="col container" style="padding-top: 120px; padding-bottom: 40px;">
     <div class="card margem">
