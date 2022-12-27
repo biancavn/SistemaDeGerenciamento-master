@@ -1,7 +1,6 @@
 from django.shortcuts import render,redirect
 from main.models import Produto, Cliente, Vendedor
 from django.shortcuts import redirect,get_object_or_404
-import sweetify
 from main.forms import ClienteForm,VendedorForm,AddProdutoForm, VendedorForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
@@ -40,7 +39,6 @@ def cadastro_cliente(request):
         form = ClienteForm(request.POST)
         if form.is_valid():
             form.save()
-            sweetify.sweetalert(request,'Cliente cadastrado com sucesso!')
             form = ClienteForm()
     else:
         form = ClienteForm()
@@ -65,8 +63,6 @@ def update_cliente(request, pk):
     form = ClienteForm(request.POST or None, instance=cliente)
     if form.is_valid():
         form.save()
-        # Não aparece a mensagem abaixo
-        sweetify.sweetalert(request,'Cliente alterado com sucesso!')
         return redirect('listaClientes')
     
     return render(request, "cadastro.html", {'form':form})
@@ -107,8 +103,6 @@ def update_produto(request, pk):
     form = AddProdutoForm(request.POST or None, request.FILES or None, instance=produto)
     if form.is_valid():
         form.save()
-        # Não aparece a mensagem abaixo
-        sweetify.sweetalert(request,'Produto alterado com Sucesso!')
         return redirect('estoque')
     
     return render(request, "addproduto.html", {'form':form})
@@ -137,8 +131,6 @@ def update_vendedor(request, pk):
     form = VendedorForm(request.POST or None, instance=vendedor)
     if form.is_valid():
         form.save()
-        # Não aparece a mensagem abaixo
-        sweetify.sweetalert(request,'Vendedor alterado com sucesso!')
         return redirect('listaVendedores')
    
     return render(request, "cadastrovendedor.html", {'form':form})
