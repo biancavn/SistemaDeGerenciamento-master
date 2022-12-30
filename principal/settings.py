@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'principal.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / './banco/db.sqlite3',
     }
 }
 
@@ -135,3 +135,4 @@ TEMPLATE_DIRS = (
 )
 
 LOGIN_REDIRECT_URL='index'
+
